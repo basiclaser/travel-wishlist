@@ -1,0 +1,34 @@
+@hostname = http://localhost
+@port = 8080
+@host = {{hostname}}:{{port}}
+
+GET {{host}}/api/countries
+###
+
+POST {{host}}/api/countries
+Content-Type: application/json
+
+{
+    "englishShortName" : "United States of America",
+    "frenchShortName" : "États-Unis d'Amérique",
+    "alpha2Code" :  "US",
+    "alpha3Code" :  "USA",
+    "numeric" : "840"
+}
+###
+
+GET {{host}}/api/countries/AFG
+###
+
+PUT {{host}}/api/countries/AFG
+Content-Type: application/json
+
+{
+    "englishShortName" : "Afghanistan",
+    "frenchShortName" : "L'Afghanistan",
+    "alpha2Code" :  "AF",
+    "alpha3Code" :  "AFG",
+    "numeric" : 1
+}
+###
+DELETE {{host}}/api/countries/AFG
